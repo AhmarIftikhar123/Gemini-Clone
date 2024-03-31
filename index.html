@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assests/imgs/gemini_blue_sparkle.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Gemini || By Ahmar Iftikhar</title>
+  </head>
+  <body>
+    <main class="wrapper">
+      <section class="side_bar">
+        <div class="upperSidebar_container">
+          <!-------- manu_btn ---------->
+          <button id="manu" class="pointer transition">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <!-- newChat_btn -->
+          <button id="newChat" class="pointer transition flex_x_center">
+            <i class="fa-solid fa-plus"></i>
+            <span class="newChat_Text">New chat</span>
+          </button>
+          <!----------- recentChat_text section ----------->
+          <section class="recentChat_text" id="chatHistoryWrapper">
+            <h3 class="transition pointer">Recent</h3>
+          </section>
+        </div>
+
+        <!-- lowerSidebar_container -->
+        <div class="lowerSidebar_container">
+          <section class="additionProperties">
+            <!-- help -->
+            <h3 class="transition pointer">
+              <span class="setting_txt flex_x_center"
+                ><i class="fa-regular fa-circle-question"></i> Help</span
+              >
+              <i class="fa-solid fa-circle"></i>
+            </h3>
+
+            <h3 class="transition pointer">
+              <span class="setting_txt flex_x_center">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                Activity</span
+              >
+            </h3>
+            <h3 class="transition pointer">
+              <span class="setting_txt flex_x_center">
+                <i class="fa-solid fa-gear"></i>
+                Settings</span
+              >
+            </h3>
+            <h3 class="gemini_plan transition pointer">
+              <img
+                src="assests/imgs/gemini_pink_sparkle.svg"
+                alt="gemini_sparkle"
+              />
+              <span class="setting_txt">Upgrade to Gemini Advanced</span>
+            </h3>
+
+            <section class="userLocation">
+              <p id="area" class="flex_x_center">
+                <i class="fa-solid fa-circle"></i> User Current Location
+              </p>
+              <a href="https://www.google.com/maps" class="ipMsg pointer"
+                >From your IP address • Update <br />
+                location</a
+              >
+            </section>
+          </section>
+        </div>
+      </section>
+      <section class="main_content">
+        <!---------------- navigation ---------------->
+        <nav class="flex_x_center_y_sp_bw">
+          <button id="gemini_plan" class="transition pointer flex_x_center">
+            Gemini <i class="fa-solid fa-caret-down"></i>
+          </button>
+
+          <div class="plan_box">
+            <!-- free_plan -->
+            <p class="free_plan flex_x_center_y_sp_bw">
+              <span class="plan_name flex_x_center">
+                <img src="assests/imgs/gemini_blue_sparkle.svg" alt="sparkle" />
+                Gemini
+              </span>
+              <i class="fa-regular fa-circle-check"></i>
+            </p>
+
+            <p class="free_plan payed_plan flex_x_center_y_sp_bw">
+              <span class="plan_name flex_x_center">
+                <img src="assests/imgs/gemini_pink_sparkle.svg" alt="sparkle" />
+                Gemini Advanced
+              </span>
+              <a class="upgrade">Upgrade</a>
+            </p>
+          </div>
+          <img
+            src="assests/imgs/user_logo.png"
+            alt="user_logo"
+            class="user_logo pointer transition"
+          />
+        </nav>
+
+        <!-- heading -->
+        <div class="user_content_wrapper flex_x_center">
+          <h1 class="heading">
+            <span class="gradient_color">Hello, Developers</span>
+            <span class="">How can I help you today? </span>
+          </h1>
+
+          <!---------- cards ---------->
+
+          <!-- 1st card -->
+
+          <section class="cards_box">
+            <div class="card pointer transition">
+              <p class="prompt">
+                Explain the key rules of rugby. Start with the basics and go
+                step-by-step.
+              </p>
+              <i class="fa-regular fa-lightbulb flex_x_center"></i>
+            </div>
+
+            <!-- 2nd card -->
+
+            <div class="card pointer transition">
+              <p class="prompt">
+                Generate simple js arrow function to say "Hello World"
+              </p>
+              <i class="fa-solid fa-code flex_x_center"></i>
+            </div>
+
+            <!-- 3rd card -->
+
+            <div class="card pointer transition">
+              <p class="prompt">
+                Help explain in a kid-friendly way: why do rainbows appear?
+              </p>
+              <i class="fa-regular fa-lightbulb flex_x_center"></i>
+            </div>
+
+            <!-- 4th card -->
+
+            <div class="card pointer transition">
+              <p class="prompt">
+                I need to store data for my business that sells toothbrushes
+                online.
+              </p>
+              <i class="fa-solid fa-code flex_x_center"></i>
+            </div>
+          </section>
+          <!-------------------- response_box -------------------->
+          <section class="response_box"></section>
+          <!-------------- input_wrapper -------------->
+          <div class="input_wrapper">
+            <input
+              type="text"
+              id="userInput"
+              placeholder="Enter a prompt here"
+              class="transition"
+            />
+            <div class="imgs_box">
+              <i class="fa-solid fa-file-image"></i>
+              <i class="fa-solid fa-microphone"></i>
+              <i class="fa-solid fa-caret-right"></i>
+            </div>
+            <div class="warn_msg">
+              <p>
+                Gemini may display inaccurate info, including about people, so
+                double-check its responses.
+                <a href="#">Your privacy and Gemini Apps</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <template class="loader_temp">
+      <div class="loader">
+        <div class="progress_bar"></div>
+        <div class="progress_bar"></div>
+        <div class="progress_bar"></div>
+      </div>
+    </template>
+
+    <template class="onUserInput">
+      <div class="user_question flex_x_center">
+        <img
+          src="assests/imgs/user_logo.png"
+          alt="user_logo"
+          class="user_logo"
+        />
+        <p id="userPrompt">Your Prompt is here</p>
+      </div>
+      <div class="server_response flex_x_center">
+        <img
+          src="assests/imgs/gemini_blue_sparkle.svg"
+          alt="gemini_blue_sparkle"
+          id="google_logo"
+        />
+        <span id="server_response">Your response Here</span>
+      </div>
+    </template>
+
+    <template class="questionsHistory">
+      <a class="recentChar_wrapper flex_x_center pointer transition">
+        <span id="userRecent_Question" class="flex_x_center">
+          <i class="fa-regular fa-message"></i>
+          User Question</span
+        >
+        <!------ ChatManue ---------->
+        <i class="fa-solid fa-ellipsis-vertical transition" id="ChatManue"></i>
+      </a>
+    </template>
+  </body>
+
+  <!-- gsap.min -->
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+    integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://kit.fontawesome.com/6943d7505a.js"
+    crossorigin="anonymous"
+  ></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+  </script>
+  <script type="module" src="script.js"></script>
+</html>

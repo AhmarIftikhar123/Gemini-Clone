@@ -1,0 +1,687 @@
+/* -------------- Root variables for consistent theming -------------- */
+:root {
+  --text_color_light: hsl(60, 16%, 87%);
+  --text_color_gray: #e3e3e3;
+  --link_color: hsl(211, 94%, 69%);
+  --side_bar_bg: hsl(210, 3%, 12%);
+  --main_bg: hsl(240, 3%, 8%);
+  --hover_bg: hsl(180, 1%, 19%);
+  --activeState_bg: hsl(210, 3%, 23%);
+  --recetnChat_active_bg: hsl(203, 100%, 23%);
+  --recetnChat_manu_active_bg: hsl(204, 100%, 17%);
+}
+
+/* -------------- Global reset and styling -------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Google_Sans_Regula";
+  color: var(--text_color_light);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* -------------- Font faces -------------- */
+@font-face {
+  font-family: "Google_Sans_Regula";
+  src: url(assests/fonts/Google_Sans_Regular.ttf);
+}
+@font-face {
+  font-family: "Google_Sans_Mono_Regular";
+  src: url(assests/fonts/Google_Sans_Mono_Regular.ttf);
+}
+
+/* -------------- Wrapper element -------------- */
+.wrapper {
+  background-color: var(--main_bg);
+  min-height: 100dvh;
+  display: flex;
+}
+
+/* -------------- Sidebar styling -------------- */
+.side_bar {
+  background-color: var(--side_bar_bg);
+  display: grid;
+  padding-inline: 1.25rem;
+}
+
+/* -------------- Menu button styling -------------- */
+#manu {
+  display: block;
+  padding: 1rem;
+  border-radius: 50%;
+  margin-block: 1.25rem;
+}
+
+/* -------------- New chat button styling -------------- */
+#newChat {
+  background-color: var(--activeState_bg);
+  padding: 1rem;
+  border-radius: 2rem;
+  margin-block: 2.5rem;
+  gap: 1rem;
+}
+
+/* -------------- Styling for recent chat wrapper -------------- */
+.recentChar_wrapper {
+  justify-content: space-between;
+  background-color: var(--activeState_bg);
+  padding-inline: 1.5rem 0rem;
+  padding-block: 0;
+  font-size: 1.125rem;
+  border-radius: 2rem;
+  margin-block: 0.75rem;
+}
+
+/* -------------- Styling for recent chat text -------------- */
+.recentChat_text h3 {
+  font-size: 1.25rem;
+}
+
+/* -------------- Styling for user recent question -------------- */
+#userRecent_Question {
+  font-size: 1.225rem;
+  gap: 1rem;
+}
+
+/* -------------- Chat menu styling -------------- */
+#ChatManue {
+  padding: 1rem 1.5rem;
+  border-radius: 50%;
+  &:hover {
+    background-color: var(--recetnChat_manu_active_bg);
+  }
+}
+
+/* -------------- Lower sidebar container styling -------------- */
+.lowerSidebar_container {
+  align-self: end;
+  padding-bottom: 1rem;
+}
+
+/* -------------- Additional properties styling -------------- */
+.additionProperties {
+  & h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem;
+    border-radius: 2rem;
+    /* Hover state */
+    &:hover {
+      background-color: var(--hover_bg);
+    }
+  }
+}
+
+/* -------------- Setting text styling -------------- */
+.setting_txt {
+  gap: 1rem;
+}
+
+/* -------------- Additional properties h3 styling -------------- */
+.additionProperties h3:nth-child(4) {
+  margin-top: 2rem;
+  background-color: var(--activeState_bg);
+  border-radius: 1rem;
+  padding: 1rem;
+  gap: 1rem;
+  & img {
+    width: 1.75rem;
+  }
+  &:hover {
+    background-color: var(--hover_bg);
+  }
+}
+
+/* -------------- Styling for status circle -------------- */
+.fa-circle::before {
+  color: rgba(255, 0, 0, 0.692);
+  font-size: 0.75rem;
+}
+
+/* -------------- Styling for chat area -------------- */
+#area {
+  font-size: 1rem;
+  padding-block: 1rem 0;
+  padding-left: 2rem;
+  gap: 1rem;
+  & i::before {
+    color: var(--text_color_light);
+  }
+}
+/* -------------- Gemini Plan Styles -------------- */
+.gemini_plan span {
+  text-wrap: nowrap;
+}
+
+.ipMsg,
+.warn_msg a {
+  display: inline-block;
+  color: var(--link_color);
+  text-decoration: none;
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+  padding-left: 2rem;
+}
+
+/* -------------- Main Content Styles -------------- */
+.main_content {
+  flex: 1;
+}
+
+nav {
+  padding: 3rem;
+  position: relative;
+}
+
+#gemini_plan {
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  gap: 1rem;
+}
+
+.free_plan {
+  padding: 1rem 0.75rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--hover_bg);
+  }
+}
+
+.plan_name {
+  gap: 1rem;
+  font-size: 1.25rem;
+}
+
+.plan_name img {
+  width: 2rem;
+}
+
+.user_logo {
+  border-radius: 50%;
+  max-width: 3.5rem;
+}
+
+.plan_box {
+  display: none;
+  /* display: grid; */
+  gap: 0.75rem;
+  position: absolute;
+  background-color: var(--side_bar_bg);
+  width: 30rem;
+  border-radius: 1rem;
+  bottom: -95%;
+  padding: 1rem 2rem;
+}
+
+.upgrade {
+  font-size: 1.275rem;
+  font-family: "Google_Sans_Regula";
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  &:hover {
+    background-color: var(--activeState_bg);
+  }
+}
+
+/* -------------- User Content Wrapper Styles -------------- */
+.user_content_wrapper {
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Heading Styles */
+.heading {
+  margin: 2rem 0;
+  font-size: 5.75rem;
+  margin-left: 15%;
+  align-self: baseline;
+  & span {
+    /* display: none; */
+    display: block;
+  }
+  & span:first-child {
+    background: linear-gradient(
+      90deg,
+      hsl(219, 86%, 61%),
+      hsl(260, 49%, 63%),
+      hsl(336, 44%, 59%),
+      hsl(354, 60%, 62%)
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  & span:last-child {
+    color: var(--hover_bg);
+  }
+}
+
+.cards_box {
+  display: grid;
+  gap: 2.25rem;
+  margin-top: 5%;
+}
+
+.card {
+  padding: 2.5rem 5%;
+}
+
+.card i {
+  width: 3.5rem;
+  height: 3.5rem;
+  bottom: 4%;
+  right: 1%;
+}
+
+i::before {
+  font-size: 1.375rem;
+}
+
+.card {
+  background-color: var(--side_bar_bg);
+  border-radius: 1rem;
+  position: relative;
+  &:hover {
+    background-color: var(--hover_bg);
+  }
+}
+
+.card p {
+  font-size: 1.6rem;
+}
+
+.card i {
+  border-radius: 50%;
+  background-color: var(--main_bg);
+  position: absolute;
+  justify-content: center;
+}
+
+/* -------------- Input Wrapper Styles -------------- */
+.input_wrapper {
+  text-align: center;
+  position: fixed;
+  bottom: 2%;
+  width: 50%;
+}
+
+/* User Input Styles */
+#userInput {
+  font-size: 1.6rem;
+  width: 100%;
+  padding: 2rem 12rem 2rem 2rem;
+  border-radius: 3rem;
+  background-color: var(--activeState_bg);
+  outline: transparent;
+  border: none;
+  color: var(--text_color_light);
+  cursor: text;
+  &:hover {
+    background-color: var(--hover_bg);
+  }
+  &::placeholder {
+    color: var(--text_color_gray);
+  }
+}
+
+.input_wrapper .imgs_box {
+  background-color: var(--side_bar_bg);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  position: absolute;
+  bottom: 44px;
+  right: 3%;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2rem;
+  & > i:last-child {
+    display: none;
+  }
+  & > i {
+    &::before {
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
+.warn_msg {
+  font-size: 1.15rem;
+  margin-top: 0.75rem;
+  & a {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* -------------- Global Styles -------------- */
+button {
+  color: var(--text_color_gray);
+  background-color: transparent;
+  outline: transparent;
+  border: none;
+  &:hover {
+    background-color: var(--hover_bg);
+  }
+}
+/* -------------------- Global Styles -------------------- */
+
+/* Styling for icons */
+i::before {
+  font-size: 1.6rem;
+}
+
+/*--------------------   Response Box ---------------------*/
+
+/* Styles for the response box */
+.response_box {
+  max-width: 712px;
+  width: 100%;
+}
+
+/* Styles for user questions */
+.user_question {
+  gap: 1rem;
+  & p {
+    font-size: 1.5rem;
+  }
+  & > * {
+    align-self: center;
+  }
+}
+
+/* Styles for the ellipsis icon */
+.fa-ellipsis-vertical {
+  visibility: hidden;
+}
+
+/* server_response */
+
+/* Styling for server responses */
+#server_response {
+  height: 70vh;
+  overflow-y: scroll;
+  font-size: 1.625rem;
+  line-height: 2.6rem;
+  width: 100%;
+  &::-webkit-scrollbar {
+    visibility: hidden;
+  }
+}
+
+/* server_response container */
+
+/* Styles for the container of server responses */
+.server_response {
+  margin-top: 5rem;
+  gap: 2rem;
+  & > p {
+    align-self: center;
+  }
+  & p {
+    font-size: 1.5rem;
+  }
+}
+
+/* Styling for the Google logo */
+#google_logo {
+  width: 3.75rem;
+}
+
+/* Styling for the rotating Google logo */
+#google_logo.rotaion {
+  animation: rotation 2s linear infinite alternate;
+}
+
+/* Animation for rotation */
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+
+/* Loader Styles */
+
+/* Styles for the loader */
+.loader {
+  width: 100%;
+}
+
+/* Styling for the progress bar */
+.loader .progress_bar {
+  height: 1.215rem;
+  border-radius: 0.25rem;
+  background-color: #f6f7f8;
+  background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
+  background-size: 800px 50px;
+  animation: loader 3s linear infinite;
+  &:last-child {
+    width: 75%;
+  }
+}
+
+/* Keyframes for loader animation */
+@keyframes loader {
+  0% {
+    background-position: -800px 0px;
+  }
+  100% {
+    background-position: 800px 0px;
+  }
+}
+
+/* Styles for the second child of the loader */
+.loader :nth-child(2) {
+  margin-block: 0.5rem;
+}
+
+/* Styling for bold text */
+b {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-color: var(--activeState_bg);
+  margin-right: 0.25rem;
+  font-family: "Google_Sans_Mono_Regular";
+}
+
+/* -------------- Media Queries -------------- */
+
+/* Media query for screens wider than 1200px */
+@media (width > 1200px) {
+  .cards_box {
+    /* display: none; */
+    grid-auto-flow: column;
+    grid-template-columns: repeat(4, 0.45fr);
+    margin-top: 8rem;
+    gap: 1.5rem;
+    padding-inline: 1.5rem;
+  }
+  .card {
+    height: 250%;
+    padding: 2rem;
+  }
+  .card i {
+    width: 4rem;
+    height: 4rem;
+    bottom: 5%;
+    right: 10%;
+  }
+  .input_wrapper .imgs_box {
+    bottom: 39% !important;
+  }
+}
+
+/* Media query for screens narrower than 1200px but wider than 840px */
+@media (width < 1200px) {
+  .cards_box {
+    grid-template-columns: repeat(2, 1fr);
+    height: calc(30vmax + 4rem);
+    margin-inline: calc(8% - 3rem);
+    gap: 1.5rem;
+  }
+  .imgs_box {
+    bottom: 48px !important;
+    gap: 1.5rem;
+  }
+  .imgs_box i::before {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Media query for screens narrower than 840px but wider than 640px */
+@media (width < 840px) {
+  nav {
+    padding: 1.25rem;
+  }
+
+  .side_bar {
+    position: fixed;
+    height: 100%;
+    z-index: 10;
+  }
+
+  .main_content {
+    margin-left: 8%;
+    margin-top: 2%;
+  }
+
+  .input_wrapper {
+    width: 74% !important;
+  }
+}
+
+/* Media query for screens narrower than 640px but wider than 500px */
+@media (width < 640px) {
+  html {
+    font-size: 55%;
+  }
+
+  nav {
+    padding: 0.25rem 2rem;
+  }
+
+  .heading {
+    margin: 0 0;
+    margin-left: calc(11% - 1.25rem);
+  }
+
+  .cards_box {
+    grid-auto-flow: row;
+    grid-template-columns: none;
+  }
+
+  .imgs_box {
+    bottom: 43px !important;
+  }
+}
+
+/* Media query for screens narrower than 500px but wider than 375px */
+@media (width < 500px) {
+  .cards_box {
+    margin-inline: calc(8%);
+  }
+  .heading {
+    font-size: 4rem;
+  }
+  .main_content {
+    margin-left: 16%;
+  }
+  .plan_box {
+    bottom: -250%;
+  }
+  .input_wrapper .imgs_box {
+    bottom: 4.5rem;
+  }
+}
+
+/* Media query for screens narrower than 375px but wider than 375px */
+@media (width <= 375px) {
+  html {
+    font-size: 52% !important;
+  }
+  .heading {
+    font-size: 3.25rem;
+  }
+
+  .main_content {
+    margin-left: 18.25%;
+  }
+  .input_wrapper .imgs_box {
+    bottom: 49% !important;
+  }
+
+  .cards_box {
+    gap: 0.25erm;
+  }
+  .input_wrapper .imgs_box {
+    bottom: 53px;
+  }
+}
+
+/* Global Classes */
+
+/* Styles for flexbox */
+.flex_x_center {
+  display: flex !important;
+  align-items: center;
+}
+
+/* Styles for flexbox with space between */
+.flex_x_center_y_sp_bw {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Styles for pointer cursor */
+.pointer {
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+/* Transition styles */
+.transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Styles for active state */
+.active {
+  outline: 2px solid var(--orange);
+  opacity: 0.8;
+}
+
+/* Styles for hiding elements */
+.none {
+  display: none !important;
+}
+
+/* Styles for grid layout */
+.grid {
+  display: grid;
+}
+
+/* Styles for visibility */
+.visible {
+  visibility: visible;
+}
+
+/* Styles for block-level elements */
+.block {
+  display: block;
+}
