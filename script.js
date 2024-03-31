@@ -204,7 +204,12 @@ const cards = document.querySelectorAll(".card ");
 
 cards.forEach((card) => {
   card.addEventListener("click", (e) => {
-    const prompt = e.target.parentElement.querySelector(".prompt");
+    let prompt;
+    e.target.tagName === "P"
+      ? (prompt = e.target.parentElement.querySelector(".prompt"))
+      : (prompt = e.target.querySelector(".prompt"));
+    console.log(prompt);
+
     userInput.value = prompt.textContent.replace(/\s{2,}/g, " ").trim();
     userInput.focus();
   });
