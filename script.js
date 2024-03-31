@@ -208,8 +208,6 @@ cards.forEach((card) => {
     e.target.tagName === "P"
       ? (prompt = e.target.parentElement.querySelector(".prompt"))
       : (prompt = e.target.querySelector(".prompt"));
-    console.log(prompt);
-
     userInput.value = prompt.textContent.replace(/\s{2,}/g, " ").trim();
     userInput.focus();
   });
