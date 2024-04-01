@@ -33,7 +33,41 @@ html {
   font-family: "Google_Sans_Mono_Regular";
   src: url(assests/fonts/Google_Sans_Mono_Regular.ttf);
 }
+/* load_animation */
+.load_animation {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--main_bg);
+  z-index: 20;
+}
+/* jsImg */
+#jsImg {
+  width: min(9vmax, 13.5rem);
+  fill-opacity: 0;
+  stroke-width: 4px;
+  stroke: var(--text_color_gray);
+  stroke-dasharray: 4500;
+  animation: stroke 2s linear;
+}
 
+@keyframes stroke {
+  0% {
+    stroke-dashoffset: 4500;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+/* animation_heading */
+.animation_heading {
+  font-size: min(2.25rem, 10vw);
+  margin-top: 1rem;
+  color: var(--hover_bg);
+  opacity: 0;
+}
 /* -------------- Wrapper element -------------- */
 .wrapper {
   background-color: var(--main_bg);
@@ -74,8 +108,19 @@ html {
   font-size: 1.125rem;
   border-radius: 2rem;
   margin-block: 0.75rem;
+  position: relative;
 }
 
+#deleteChat {
+  position: absolute;
+  right: -40%;
+  width: 7rem;
+  background-color: var(--activeState_bg);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  display: none;
+}
 /* -------------- Styling for recent chat text -------------- */
 .recentChat_text h3 {
   font-size: 1.25rem;
@@ -307,7 +352,7 @@ i::before {
 .input_wrapper {
   text-align: center;
   position: fixed;
-  bottom: 1%;
+  bottom: 2%;
   width: 50%;
 }
 
@@ -422,7 +467,7 @@ i::before {
 
 /* Styles for the container of server responses */
 .server_response {
-  margin-top: 5rem;
+  margin-top: 4rem;
   gap: 2rem;
   & > p {
     align-self: center;
@@ -558,7 +603,9 @@ b {
     margin-left: 8%;
     margin-top: 2%;
   }
-
+  .plan_box {
+    bottom: -150%;
+  }
   .input_wrapper {
     width: 74% !important;
   }
@@ -578,7 +625,9 @@ b {
     margin: 0 0;
     margin-left: calc(11% - 1.25rem);
   }
-
+  .plan_box {
+    bottom: -250%;
+  }
   .cards_box {
     grid-auto-flow: row;
     grid-template-columns: none;
@@ -602,6 +651,7 @@ b {
   }
   .plan_box {
     bottom: -250%;
+    left: 0%;
   }
   .input_wrapper .imgs_box {
     bottom: 4.5rem;
@@ -620,10 +670,12 @@ b {
   .main_content {
     margin-left: 18.25%;
   }
+  .input_wrapper {
+    width: 80% !important;
+  }
   .input_wrapper .imgs_box {
     bottom: 49% !important;
   }
-
   .cards_box {
     gap: 0.25erm;
   }
@@ -683,5 +735,5 @@ b {
 
 /* Styles for block-level elements */
 .block {
-  display: block;
+  display: block !important;
 }
