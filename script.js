@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const API_KEY = "AIzaSyBPvtRZ_8XBTIqUuAfzDolQsrG8JcYhDtE";
+const API_KEY = "AIzaSyD0h_IDW-wafqs-bW5D8SlqYYGdbqxv63o";
 const genAI = new GoogleGenerativeAI(API_KEY);
 const userInput = document.getElementById("userInput");
 const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro-latest" });
@@ -35,7 +35,6 @@ const appendPrevious_res = (previousPrompt) => {
   const getHistory_from_LocatStrorage = JSON.parse(
     localStorage.getItem("chatHistory")
   );
-
   if (getHistory_from_LocatStrorage) {
     response_box.innerHTML =
       getHistory_from_LocatStrorage[previousPrompt.trim()];
@@ -231,6 +230,29 @@ chatHistory_wrapper.addEventListener("mouseover", (e) => {
   }
 });
 
+// function to update localStorage on deleting previous Chat_btn
+
+const updateLocatStorage_of_previousChat = () => {
+  localStorage.setItem(
+    "previouseQuestion",
+    JSON.stringify(chatHistory_wrapper.innerHTML)
+  );
+};
+
+// function to remove chat btn on click
+
+chatHistory_wrapper.addEventListener("click", (e) => {
+  if (e.target.classList.contains("fa-ellipsis-vertical")) {
+    const del_btn = e.target.nextElementSibling;
+    del_btn.classList.toggle("block");
+    del_btn.onclick = (e) => {
+      e.target.parentElement.remove();
+      updateLocatStorage_of_previousChat();
+      reSetChat();
+    };
+  }
+});
+
 const side_bar = document.querySelector(".side_bar");
 
 side_bar.addEventListener("mouseover", (e) => {
@@ -377,3 +399,22 @@ manu_btn.onclick = () => {
     shrinkSideBar();
   }
 })();
+
+const loadAnimation = (selector) => {
+  gsap.fromTo(
+    selector,
+    { y: 0, opacity: 0, duration: 2.5 },
+    { y: "100%", opacity: 1 }
+  );
+};
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const animation_heading = document.querySelector(".animation_heading");
+    loadAnimation(animation_heading);
+  }, 500);
+  setTimeout(() => {
+    const load_animation_box = document.querySelector(".load_animation");
+    loadAnimation(load_animation_box);
+  }, 1500);
+});
