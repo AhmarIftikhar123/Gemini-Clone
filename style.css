@@ -557,6 +557,7 @@ b {
   }
   .card {
     height: 16vmax;
+    max-height: 21.25rem;
     padding: 2rem;
   }
   .card i {
