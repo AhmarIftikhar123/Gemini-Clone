@@ -195,7 +195,9 @@ userInput.addEventListener("input", (e) => {
 arrow_img.addEventListener("click", () => {
   if (userInput.value === "") return;
   else {
+    updateQuestion(userInput.value);
     requestData();
+    displayArrowImg();
   }
 });
 
