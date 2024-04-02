@@ -353,7 +353,7 @@ i::before {
   text-align: center;
   position: fixed;
   bottom: 2%;
-  width: 50%;
+  width: 52%;
 }
 
 /* User Input Styles */
@@ -546,7 +546,7 @@ b {
 /* -------------- Media Queries -------------- */
 
 /* Media query for screens wider than 1200px */
-@media (width > 1200px) {
+@media (width >= 1200px) {
   .cards_box {
     /* display: none; */
     grid-auto-flow: column;
@@ -556,7 +556,7 @@ b {
     padding-inline: 1.5rem;
   }
   .card {
-    height: 250%;
+    height: 16vmax;
     padding: 2rem;
   }
   .card i {
@@ -574,13 +574,20 @@ b {
 @media (width < 1200px) {
   .cards_box {
     grid-template-columns: repeat(2, 1fr);
-    height: calc(30vmax + 4rem);
+    grid-template-rows: repeat(2, 0.25fr);
+    /* height: calc(30vmax + 4rem); */
     margin-inline: calc(8% - 3rem);
     gap: 1.5rem;
   }
   .imgs_box {
     bottom: 48px !important;
     gap: 1.5rem;
+  }
+  .heading {
+    font-size: 5rem;
+  }
+  .card {
+    height: 12.5vmax;
   }
   .imgs_box i::before {
     font-size: 1.25rem !important;
@@ -598,7 +605,6 @@ b {
     height: 100%;
     z-index: 10;
   }
-
   .main_content {
     margin-left: 8%;
     margin-top: 2%;
@@ -620,10 +626,16 @@ b {
   nav {
     padding: 0.25rem 2rem;
   }
-
+  .card {
+    height: 11vmax;
+    margin-inline: calc(8% - 1.25rem);
+  }
   .heading {
     margin: 0 0;
-    margin-left: calc(11% - 1.25rem);
+    margin-inline: calc(9% - 1.25rem);
+  }
+  .user_question {
+    gap: 1.25rem;
   }
   .plan_box {
     bottom: -250%;
@@ -641,7 +653,7 @@ b {
 /* Media query for screens narrower than 500px but wider than 375px */
 @media (width < 500px) {
   .cards_box {
-    margin-inline: calc(8%);
+    margin-inline: calc(2%);
   }
   .heading {
     font-size: 4rem;
