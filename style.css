@@ -674,7 +674,7 @@ b {
 /* Media query for screens narrower than 375px but wider than 375px */
 @media (width <= 375px) {
   html {
-    font-size: 52% !important;
+    font-size: 50% !important;
   }
   .heading {
     font-size: 3.25rem;
