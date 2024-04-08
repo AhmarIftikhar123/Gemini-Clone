@@ -695,6 +695,9 @@ b {
   .input_wrapper .imgs_box {
     bottom: 53px;
   }
+  .server_response {
+    margin-top: 2rem;
+  }
 }
 
 /* Global Classes */
