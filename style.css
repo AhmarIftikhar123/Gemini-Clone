@@ -4,7 +4,7 @@
   --text_color_gray: #e3e3e3;
   --link_color: hsl(211, 94%, 69%);
   --side_bar_bg: hsl(210, 3%, 12%);
-  --main_bg: hsl(240, 3%, 8%); 
+  --main_bg: hsl(240, 3%, 8%);
   --hover_bg: hsl(180, 1%, 19%);
   --activeState_bg: hsl(210, 3%, 23%);
   --recetnChat_active_bg: hsl(203, 100%, 23%);
@@ -674,7 +674,7 @@ b {
 /* Media query for screens narrower than 375px but wider than 375px */
 @media (width <= 375px) {
   html {
-    font-size: 45% !important;
+    font-size: 50% !important;
   }
   .heading {
     font-size: 3.25rem;
@@ -694,6 +694,11 @@ b {
   }
   .input_wrapper .imgs_box {
     bottom: 53px;
+  }
+
+  #server_response {
+    font-size: 1.25rem;
+    line-height: 2rem;
   }
   .server_response {
     margin-top: 1rem;
