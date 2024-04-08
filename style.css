@@ -454,7 +454,7 @@ i::before {
 /* Styling for server responses */
 #server_response {
   height: 70vh;
-  max-height: 5.85rem;
+  max-height: 58.5rem;
   overflow-y: scroll;
   font-size: 1.625rem;
   line-height: 2.6rem;
