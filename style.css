@@ -453,7 +453,7 @@ i::before {
 
 /* Styling for server responses */
 #server_response {
-  height: calc((100vh - 18vh) - 7.5em);
+  height: calc((100vh - 20vh) - 7.5em);
   overflow-y: scroll;
   font-size: 1.625rem;
   line-height: 2.6rem;
