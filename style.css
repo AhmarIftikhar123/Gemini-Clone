@@ -681,7 +681,7 @@ b {
   }
 
   .main_content {
-    margin-left: 18.25%;
+    margin-left: min(18.25%, 6.5rem);
   }
   .input_wrapper {
     width: 80% !important;
@@ -701,7 +701,7 @@ b {
     line-height: 2rem;
   }
   .server_response {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
   }
 }
 
