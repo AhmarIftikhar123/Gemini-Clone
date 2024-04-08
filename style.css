@@ -455,9 +455,10 @@ i::before {
 #server_response {
   height: calc((100vh - 20vh) - 7.5em);
   overflow-y: scroll;
+  max-width: 80%;
+  overflow-x: hidden;
   font-size: 1.625rem;
   line-height: 2.6rem;
-  width: 100%;
   &::-webkit-scrollbar {
     visibility: hidden;
   }
